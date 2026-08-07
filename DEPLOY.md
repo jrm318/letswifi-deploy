@@ -93,13 +93,32 @@ Example `/etc/apache2/sites-enabled/default-ssl.conf` Configuration
     SSLCertificateFile      /etc/ssl/certs/ca-bundle
     SSLCertificateKeyFile   /etc/ssl/private/www.example.edu.key
 
-    <Directory /var/www/html/letswifi/www>
+    # The portal's public web root
+    <Directory /var/www/html/letswifi-portal/htdocs>
+        Options -Indexes -Includes -ExecCGI +FollowSymLinks
+        AllowOverride None
         Require all granted
     </Directory>
-    <Directory /var/www/html/letwifi-portal/simplesamlphp/public>
+
+    # SimpleSAMLphp public dir — matches the Alias target
+    <Directory /var/www/html/letswifi-portal/simplesamlphp/public>
+        Options -Indexes -Includes -ExecCGI +FollowSymLinks
+        AllowOverride None
         Require all granted
     </Directory>
-</VirtualHost>
+
+    # Belt-and-suspenders: refuse the sensitive project dirs outright
+    <Directory /var/www/html/letswifi-portal/var>
+        Require all denied
+    </Directory>
+    <Directory /var/www/html/letswifi-portal/etc>
+        Require all denied
+    </Directory>
+
+    <DirectoryMatch "/\.(git|svn|ht)">
+        Require all denied
+    </DirectoryMatch>
+    </VirtualHost>
 ```
 
 You will then want create symbolic links in  `/etc/apache2/sites-enabled` from the files in  `/etc/apache2/sites-available`
