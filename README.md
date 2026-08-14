@@ -4,6 +4,9 @@
 > I have not had a chance to verify these steps on a clean install. Please open pull requests if you find something I should update/fix.
 > Thanks!
 
+>[!NOTE]
+> This particular document was generated with AI assistance
+
 ## 1. Purpose
 
 This guide describes how to adopt and operate a locally hosted wireless onboarding solution using the LetsWiFi portal integrated with institutional identity systems.
