@@ -1,5 +1,9 @@
 # Deploying the Lets WiFi portal (Single directory)
 
+> [!CAUTION]
+> I have not had a chance to verify these steps on a clean install. Please open pull requests if you find something I should update/fix.
+> Thanks!
+
 ## Overview
 
 ## Table of Contents
