@@ -4,7 +4,10 @@
 > I have not had a chance to verify these steps on a clean install. Please open pull requests if you find something I should update/fix.
 > Thanks!
 
->[!NOTE]
+> [!NOTE]
+> Instructions are in the `DEPLOY.md` document.
+
+> [!NOTE]
 > This particular document was generated with AI assistance
 
 ## 1. Purpose
