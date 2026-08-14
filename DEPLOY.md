@@ -206,6 +206,10 @@ Load in the XML Metadata file from your IAM team, Click `Parse`
 
 Copy generated PHP code to the file `simplesamlphp/metadata/saml20-idp-remote.php`
 
+Edot `/var/www/htdocs/html/letswifi-portal/simplesamlphp/authsources.php
+
+Add `        'sign.logout' => true,` under `entityID`
+
 ## Configure letswifi portal
 
 ### Set oauth Secret
